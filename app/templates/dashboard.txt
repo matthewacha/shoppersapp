@@ -1,0 +1,7 @@
+{%extends "base.html"%}
+{%block top%}<li><a href="/signup"><span></span> Logout</a></li>{%endblock%}
+{%block body%}
+<div  class="panel panel-default">
+ Stuff goes here
+</div>
+{%endblock%}
