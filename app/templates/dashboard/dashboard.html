@@ -1,0 +1,59 @@
+{%extends "base.html"%}
+{%block top%}<li><a href="/login"><span>{{user}}</span> Logout</a></li>{%endblock%}
+{%block body%}
+
+ <div class="content-section">
+  <div class="outer">
+    <div class="middle">
+      <div class="inner">
+        <h1 style="text-align:center;">Shopping List</h1>
+        {% if listitems %}
+          <hr class="intro-divider">
+          <div class="center">
+            <table class="table  table-bordered">
+              <thead>
+                <tr>
+                  <th width="15%"> Name </th>
+                  <th width="40%"> Description </th>
+                  <th width="15%"> Edit </th>
+                  <th width="15%"> Delete </th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for item in listitems %}
+                <tr>
+                  <td> {{ item.name }} </td>
+                  <td> {{ item.description }} </td>
+                  <td>
+                    <a href="{{ url_for('lists_mod.edit_item', id=item.id) }}">
+                      <i class=""></i> Edit 
+                    </a>
+                  </td>
+                  <td>
+                    <a href="{{ url_for('lists_mod.delete_item', id=item.id) }}">
+                      <i class=""></i> Delete 
+                    </a>
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <div style="text-align: center">
+        {% else %}
+          <div style="text-align: center">
+            <h3> No items have been added. </h3>
+            <hr class="intro-divider">
+        {% endif %}
+          <a href="{{ url_for('lists_mod.add_item') }}" class="btn btn-default btn-lg">
+            <i class=""></i>
+            Add item
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+{%endblock%}
