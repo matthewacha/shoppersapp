@@ -36,7 +36,7 @@ class User(shoppers.Model, UserMixin):
         return check_password_hash(self.password_hash, password)
 
     def __repr__(self):
-        return '{}'.format(self.name)
+        return '{}'.format(self.first_name)
   
     #setup user loader  
     @login_manager.user_loader
