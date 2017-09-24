@@ -14,11 +14,12 @@ def homepage():
     return render_template('home.html', title="home")
 @users.route('/signup', methods=['GET', 'POST'])
 def signup():
-    form = Signupform(request.form)
+    form = Signupform()
     if request.method == 'POST':
         #validate signin form
         if form.validate_on_submit() == False:
-		    flash('Invalid email or password please try again')
+            flash('Invalid email or password please try again')
+            print form.errors
         else:	
             fname = form.first_name.data
             lname = form.last_name.data
@@ -32,7 +33,7 @@ def signup():
             flash('Successfully signedup')
             return redirect(url_for('users.login')) 
          
-    return render_template('signup.html', form=form, tile='Signup')   
+    return render_template('signup.html', form=form, title='Signup')   
  
 @users.route('/login', methods=['GET', 'POST'])
 def login():
@@ -42,7 +43,7 @@ def login():
             user = User.query.filter_by(email=form.email.data).first()
             if user is not None:
                 if user.verify_password(form.password.data):
-                    login_user(user)
+                    login_user(user) 
                     flash('Welcome!!')
                     return redirect(url_for('lists_mod.list_items'))
                 flash('Wrong password')  

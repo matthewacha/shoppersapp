@@ -17,6 +17,9 @@ body, html {
 .navbar{
 	margin-bottom:0px;
 }
+.navbar-inverse{
+	color:F4A460;
+}
 a, .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
   color: #aec251;
 }

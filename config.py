@@ -9,7 +9,7 @@ BASEDIR = os.path.abspath(os.path.dirname(__file__))
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASEDIR, 'shoppers.db')
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 
-SERVER_NAME = 'localhost:5000'
+#SERVER_NAME = 'localhost:5000'
 THREADS_PER_PAGE = 2
 
 #set cross site request forgery
