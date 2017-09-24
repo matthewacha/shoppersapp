@@ -14,7 +14,7 @@ def homepage():
     return render_template('home.html', title="home")
 @users.route('/signup', methods=['GET', 'POST'])
 def signup():
-    form = Signupform()
+    form = Signupform(request.form)
     if request.method == 'POST':
         #validate signin form
         if form.validate_on_submit() == False:
