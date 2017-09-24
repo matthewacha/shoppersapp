@@ -17,6 +17,9 @@ body, html {
 .navbar{
 	margin-bottom:0px;
 }
+.navbar-inverse{
+	color:F4A460;
+}
 a, .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
   color: #aec251;
 }
@@ -123,8 +126,12 @@ padding:100px;
 	padding-left:50px;
 	padding-top:25px;
 }
+
 .panel-default{
 	margin-top:200px;
+}
+#panel-head{
+	padding-left:90px
 }
 
 .wrapper {
@@ -137,4 +144,10 @@ padding:100px;
 	width:400px;
 	margin:0px auto;
 	margin-top:0px;
+}
+.table{
+	background-color: cadetblue
+}
+td{
+	color:black;
 }
